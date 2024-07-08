@@ -13,7 +13,7 @@ import 'package:flutter/material.dart';
 
 class Routes {
   static const initlRoute = '/';
-  static const changeLan = '/changeLang';
+  static const changeLang = '/changeLang';
   static const login = '/login';
   static const sendCode = '/sendCode';
   static const restPassword = '/restPassword';
@@ -32,7 +32,7 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const AddMealScreen());
       case Routes.menuHome:
         return MaterialPageRoute(builder: (_) => const MenuHomeScreen());
-      case Routes.changePassword:
+      case Routes.changeLang:
         return MaterialPageRoute(builder: (_) => const ChangeLangScreen());
       case Routes.login:
         return MaterialPageRoute(builder: (_) => const LoginScreen());
