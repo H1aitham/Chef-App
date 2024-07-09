@@ -3,6 +3,7 @@ import 'package:chef_app/core/utils/app_assets.dart';
 import 'package:chef_app/core/utils/app_colors.dart';
 import 'package:chef_app/core/utils/app_strings.dart';
 import 'package:chef_app/core/widget/custom_image.dart';
+import 'package:chef_app/core/widget/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -34,13 +35,12 @@ class LoginScreen extends StatelessWidget {
               height: 100.h,
             ),
             Padding(
-              padding: const EdgeInsets.all(24),
+              padding: EdgeInsets.all(24),
               child: Column(
                 children: [
-                  TextFormField(
+                  CustomTextFormField(
                     controller: TextEditingController(),
-                    cursorColor: AppColors.primary,
-                    decoration: const InputDecoration(hintText: 'Email'),
+                    hint: ' E-mail',
                   )
                 ],
               ),
