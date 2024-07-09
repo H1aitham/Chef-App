@@ -41,7 +41,7 @@ class AppRoutes {
       case Routes.sendCode:
         return MaterialPageRoute(builder: (_) => const SendCodeSreen());
       case Routes.initlRoute:
-        return MaterialPageRoute(builder: (_) => const SplashScreen());
+        return MaterialPageRoute(builder: (_) => const LoginScreen());
       case Routes.changePassword:
         return MaterialPageRoute(builder: (_) => const ChngePasswordScreen());
       case Routes.profleHome:
