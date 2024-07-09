@@ -30,7 +30,7 @@ class CustomTextFormField extends StatelessWidget {
       decoration: InputDecoration(
         suffixIcon: IconButton(
           onPressed: suffixIcOnPressed,
-          icon: Icon(icon),
+          icon: Icon(icon,color: AppColors.primary,),
         ),
         hintText: hint,
         labelText: lable,
