@@ -48,7 +48,7 @@ class _AppLocalDelegate extends LocalizationsDelegate<AppLocalizations> {
   }
 }
 
-extension TranslateString on String {
+extension TranslateString on String {///
   String tr(BuildContext context) {
     return AppLocalizations.of(context)!.translate(this);
   }

@@ -1,6 +1,7 @@
-import 'package:chef_app/core/utils/app_colors.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../utils/app_colors.dart';
 
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
@@ -11,7 +12,7 @@ class CustomTextFormField extends StatelessWidget {
     this.validate,
     this.isPassword = false,
     this.icon,
-    this.suffixIcOnPressed,
+    this.suffixIconOnPressed,
   });
   final TextEditingController controller;
   final String? hint;
@@ -19,7 +20,7 @@ class CustomTextFormField extends StatelessWidget {
   final String? Function(String?)? validate;
   final bool isPassword;
   final IconData? icon;
-  final VoidCallback? suffixIcOnPressed;
+  final VoidCallback? suffixIconOnPressed;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -28,12 +29,16 @@ class CustomTextFormField extends StatelessWidget {
       validator: validate,
       obscureText: isPassword,
       decoration: InputDecoration(
-        suffixIcon: IconButton(
-          onPressed: suffixIcOnPressed,
-          icon: Icon(icon,color: AppColors.primary,),
-        ),
+        contentPadding: EdgeInsets.symmetric(horizontal: 16.w),
         hintText: hint,
         labelText: lable,
+        suffixIcon: IconButton(
+          onPressed: suffixIconOnPressed,
+          icon: Icon(
+            icon,
+            color: AppColors.primary,
+          ),
+        ),
       ),
     );
   }

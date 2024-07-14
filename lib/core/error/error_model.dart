@@ -7,6 +7,8 @@ class ErrorModel{
     return ErrorModel(
       status: jsonData['status'],
       errorMessage: jsonData['ErrorMessage'],
+
+      
     );
   }
 }

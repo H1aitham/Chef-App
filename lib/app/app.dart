@@ -1,22 +1,17 @@
-
-
 import 'package:chef_app/core/bloc/cubit/global_cubit.dart';
 import 'package:chef_app/core/locale/app_locale.dart';
-import 'package:chef_app/core/routes/app_routes.dart';
-import 'package:chef_app/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+import '../core/bloc/cubit/global_state.dart';
+import '../core/routes/app_routes.dart';
+import '../core/theme/app_theme.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -25,19 +20,19 @@ class MyApp extends StatelessWidget {
         builder: (context, state) {
           return MaterialApp(
               localizationsDelegates: const [
-                GlobalWidgetsLocalizations.delegate,
-                GlobalMaterialLocalizations.delegate,
+                GlobalMaterialLocalizations.delegate,//ios//and
                 GlobalCupertinoLocalizations.delegate,
-                AppLocalizations.delegate
+                GlobalWidgetsLocalizations.delegate,
+                AppLocalizations.delegate//import from local
               ],
-              supportedLocales: const [
-                Locale('ar', "EG"),
-                Locale('en', "US")
+              supportedLocales: const [ //lang add to app
+
+                Locale('ar', "EG"),//countr code
+                Locale('en', "US"),
               ],
-              // during BlocProvider arrive to langcode during type it <GlobalCubit>
-              locale: Locale(BlocProvider.of<GlobalCubit>(context).langcode),
+              locale:  Locale(BlocProvider.of<GlobalCubit>(context).langCode),
               debugShowCheckedModeBanner: false,
-              initialRoute: Routes.initlRoute,
+              initialRoute: Routes.intitlRoute,
               onGenerateRoute: AppRoutes.generateRoute,
               title: 'Flutter Demo',
               theme: getAppTheme());

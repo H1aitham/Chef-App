@@ -1,7 +1,7 @@
-import 'package:chef_app/core/error/error_model.dart';
 import 'package:chef_app/core/error/exceptions.dart';
 import 'package:dio/dio.dart';
 
+import '../../error/error_model.dart';
 import 'api_consumer.dart';
 import 'api_interceptors.dart';
 import 'end_points.dart';
@@ -78,13 +78,14 @@ class DioConsumer extends ApiConsumer {
   @override
   Future post(
     String path, {
-    Object? data,
+    dynamic data,
     Map<String, dynamic>? queryParameters,
+    bool isFormData=false,
   }) async {
     try {
       var res = await dio.post(
         path,
-        data: data,
+        data: isFormData? FormData.fromMap(data):data,
         queryParameters: queryParameters,
       );
       return res.data;
@@ -120,14 +121,16 @@ class DioConsumer extends ApiConsumer {
 
           case 409: //conflict
             throw ConflictException(ErrorModel.fromJson(e.response!.data));
+          case 504:
+            throw BadRequestException(ErrorModel.fromJson(e.response!.data));
 
           // print(e.response);
         }
       case DioExceptionType.cancel:
-        throw CancleExeption(ErrorModel.fromJson(e.response!.data));
+        throw ServerException(ErrorModel(status: 500, errorMessage: e.toString()));
 
       case DioExceptionType.unknown:
-        throw ServerException(ErrorModel.fromJson(e.response!.data));
+        throw ServerException(ErrorModel(status: 500, errorMessage: e.toString()));
 
       // throw ServerException('badResponse');
     }

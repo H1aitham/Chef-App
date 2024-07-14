@@ -37,6 +37,8 @@ class AppStrings {
   static const String pleaseEnterValidCode = 'pleaseEnterValidCode';
   static const String passwordChangedSucessfully = 'PasswordChangedSucessfully';
   static const String pleaseEnterValidNumber = 'pleaseEnterValidNumber';
+  static const String menu = 'menu';
+  static const String profile = 'profile';
 
   //! home-order-menu
   static const String addDishToMenu = 'addDishToMenu';
@@ -68,4 +70,7 @@ class AppStrings {
   static const String changePassword = 'changePassword';
   static const String ok = 'ok';
   static const String cancel = 'cancel';
+  static const String deleteMeal = 'deleteMeal';
+  static const String category = 'category';
+  static const String noMeals = 'noMeals';
 }
