@@ -9,7 +9,7 @@ import '../../../../core/error/exceptions.dart';
 import '../../../../core/services/service_locator.dart';
 import '../../../../core/utils/commons.dart';
 
-class MenuRepository {
+class MenuRepository {//logic to api
   Future<Either<String, String>> addDishToMenu({
     required XFile image,
     required String mealName,

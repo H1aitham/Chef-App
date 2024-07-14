@@ -41,7 +41,7 @@ class LoginCubit extends Cubit<LoginState> {
         await sl<CacheHelper>().saveData(
             key: ApiKeys.id,
             value: decodedToken[ApiKeys
-                .id]); // {id: 6498d8d963385b3f9a0bcf3c, email: anas423999@gmail.com, name: Anas, iat: 1688680561}
+                .id]); // save token
 
         await sl<CacheHelper>().saveData(
           key: ApiKeys.token,
