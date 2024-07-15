@@ -6,4 +6,5 @@ class AppAssets{
   static const String imagePicker='${basePath}image_picker.png';
   static const String background='${basePath}backround.png';
   static const String backgroundTwo='${basePath}backround_two.png';
+  static const String profile='${basePath}IMG_20230312_193259.png';
 }

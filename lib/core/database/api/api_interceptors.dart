@@ -11,7 +11,7 @@ class ApiInterceptors extends Interceptor {
     options.headers[ApiKeys.token] =
      sl<CacheHelper>().getData(key: ApiKeys.token) 
     != null
-        ? 'FOODAPI ${sl<CacheHelper>().getData(key: ApiKeys.token)}'
+        ? 'FOODAPI ${sl<CacheHelper>().getData(key: ApiKeys.token)}' //food with coll api
         : null;
     super.onRequest(options, handler);
   }
